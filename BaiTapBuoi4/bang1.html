@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bảng 1</title>
+    </head>
+    <body>
+        <table width="100%" border="1" cellspacing="0" cellpadding="6">
+            <!-- table header -->
+            <thead>
+                <tr>
+                    <th rowspan="4">Nhánh SP</th>
+                    <th rowspan="4">Epic</th>
+                    <th colspan="8">Năm <em>2025</em></th>
+                    <th rowspan="4">SLA/SLO</th>
+                    <th rowspan="4">Ghi chú</th>
+                </tr>
+                <tr>
+                    <th colspan="4">H1</th>
+                    <th colspan="4">H2</th>
+                </tr>
+                <tr>
+                    <th colspan="2">T.01</th>
+                    <th>T.02</th>
+                    <th>T.03</th>
+                    <th>T.07</th>
+                    <th colspan="2">T.08</th>
+                    <th>T.09</th>
+                </tr>
+                <tr>
+                    <th>S1</th>
+                    <th>S2</th>
+                    <th>S3</th>
+                    <th>S4</th>
+                    <th>S1</th>
+                    <th>S2</th>
+                    <th>S3</th>
+                    <th>S4</th>
+                </tr>
+            </thead>
+            <!-- table body -->
+            <tbody>
+                <!-- B2C -->
+                <tr>
+                    <th rowspan="3">B2C</th>
+                    <th>Checkout <em>2.0</em></th>
+                    <td><strong>20</strong></td>
+                    <td>18</td>
+                    <td>━</td>
+                    <td>22</td>
+                    <td>━</td>
+                    <td colspan="2">
+                        <span style="background-color: yellow">30</span>
+                    </td>
+                    <td>15</td>
+                    <td><strong>99.<sup>9</sup>%</strong></td>
+                    <td>Target H2</td>
+                </tr>
+                <tr>
+                    <th>Search <em>Relevance</em></th>
+                    <td>10</td>
+                    <td>15</td>
+                    <td><strong>18</strong></td>
+                    <td>━</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>━</td>
+                    <td>14</td>
+                    <td>0.<sup>1</sup>%EB</td>
+                    <td>AB test</td>
+                </tr>
+                <tr>
+                    <th>Gộp B2C</th>
+                    <td colspan="8">
+                        <em>Tổng H1+H2:</em> <strong>ổn định</strong>
+                    </td>
+                    <td>━</td>
+                    <td>OK</td>
+                </tr>
+                <!-- B2B -->
+                <tr>
+                    <th rowspan="3">B2B</th>
+                    <th>API Gateway</th>
+                    <td>━</td>
+                    <td>14</td>
+                    <td>16</td>
+                    <td>━</td>
+                    <td>━</td>
+                    <td>18</td>
+                    <td>18</td>
+                    <td><strong>20</strong></td>
+                    <td>99.<sup>5</sup>%</td>
+                    <td rowspan="2">Harden infra</td>
+                </tr>
+                <tr>
+                    <th>Billing v1.<sup>3</sup>.<sub>5</sub></th>
+                    <td colspan="4">
+                        <span style="background-color: yellow">Migrate v2</span>
+                    </td>
+                    <td>━</td>
+                    <td>━</td>
+                    <td>10</td>
+                    <td>12</td>
+                    <td>99.<sup>0</sup>%</td>
+                </tr>
+                <tr>
+                    <th>Gộp B2B</th>
+                    <td colspan="8">
+                        <em>Tổng H1+H2:</em> <strong>tiến độ đạt</strong>
+                    </td>
+                    <td>━</td>
+                    <td>━</td>
+                </tr>
+                <!-- Platform -->
+                <tr>
+                    <th rowspan="2">Platform</th>
+                    <th>Observability</th>
+                    <td colspan="5"><strong>Agent & Dash</strong></td>
+                    <td>━</td>
+                    <td>━</td>
+                    <td>━</td>
+                    <td><strong>99.<sup>95</sup>%</strong></td>
+                    <td>Rollout T.09</td>
+                </tr>
+                <tr>
+                    <th>Security</th>
+                    <td>Audit</td>
+                    <td>━</td>
+                    <td>━</td>
+                    <td colspan="2">Hardening</td>
+                    <td colspan="3"><em>IAM</em></td>
+                    <td>99.<sup>9</sup>%</td>
+                    <td>Chốt H2</td>
+                </tr>
+            </tbody>
+            <!-- table footer -->
+            <tfoot style="text-align: center">
+                <tr>
+                    <th colspan="10">Tổng quan</th>
+                    <td><strong>OK</strong></td>
+                    <td>━</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
