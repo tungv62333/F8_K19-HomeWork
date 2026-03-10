@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>DASHBOARD</title>
+        <link rel="stylesheet" href="../css/base.css" />
+        <link rel="stylesheet" href="../css/theme.css" />
+
+        <!-- Internal CSS riêng cho trang dashboard -->
+        <style>
+            .title {
+                color: green;
+            }
+
+            .section {
+                color: teal;
+            }
+
+            .title {
+                color: darkorange;
+            }
+
+            .highlight {
+                color: crimson;
+            }
+
+            .big {
+                color: navy;
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+            Phan tu nay co:
+                tag: h1
+                class: .title
+                id: #special
+                css inline: style="color:red"
+
+            CSS ap dung:
+                base.css → h1 { color: red }
+                base.css → .title { color: purple }
+                theme.css → #special { color: deeppink }
+                internal CSS → .title { color: green }
+                inline css → style="color: black"
+
+            Quy tac xet do uu tien:
+                Selector thang: inline style
+                Ly do: inline style co do uu tien cao nhat trong CSS
+
+            Mau hien thi cuoi cung: black
+        -->
+        <h1 class="title" id="special" style="color: black">DASHBOARD</h1>
+
+        <h2 class="section">Tong quan he thong</h2>
+
+        <div class="big">
+            <h3 class="title">Courses</h3>
+            <p class="highlight">Quan ly danh sach khoa hoc</p>
+
+            <h3 class="title">Students</h3>
+            <p class="highlight">Thong tin hoc vien</p>
+
+            <h3 class="title">Teachers</h3>
+            <p class="highlight">Danh sach giang vien</p>
+
+            <h3 class="title">Orders</h3>
+            <p class="highlight">Quan ly don hang dang ky khoa hoc</p>
+
+            <h3 class="title">Reports</h3>
+            <p class="highlight">Thong ke va bao cao</p>
+        </div>
+    </body>
+</html>

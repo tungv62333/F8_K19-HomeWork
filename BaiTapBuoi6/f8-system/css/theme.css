@@ -1,0 +1,15 @@
+/* tag */
+h2 {
+  color: darkorange;
+}
+
+/* class */
+.title {
+  color: limegreen;
+}
+
+/* id */
+#special {
+  color: deeppink;
+}
+

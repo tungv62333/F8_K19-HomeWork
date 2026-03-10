@@ -1,0 +1,82 @@
+/* tag */
+h1 {
+  color: red;
+}
+
+h2 {
+  color: blue;
+}
+
+h3 {
+  color: green;
+}
+
+p {
+  color: orange;
+}
+
+/* class */
+.title {
+  color: purple;
+}
+
+.section {
+  color: brown;
+}
+
+.highlight {
+  color: pink;
+}
+
+.big {
+  color: teal;
+}
+
+.content {
+  color: gray;
+}
+
+.red-color {
+  color: red;
+}
+
+.yellow-color {
+  color: yellow;
+}
+
+.pink-color {
+  color: pink;
+}
+
+/* id */
+#main {
+  color: darkblue;
+}
+
+#special {
+  color: darkred;
+}
+
+#darkorange {
+  color: darkorange;
+}
+
+#limongreen {
+  color: limegreen;
+}
+
+#deeppink {
+  color: deeppink;
+}
+
+#magenta {
+  color: magenta;
+}
+
+
+
+/* yêu cầu 3 */
+h1.title#main {
+  color: magenta;
+}
+

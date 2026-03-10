@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ORDERS PAGE</title>
+        <link rel="stylesheet" href="../css/base.css" />
+        <link rel="stylesheet" href="../css/theme.css" />
+        <style>
+            #special {
+                color: red;
+            }
+
+            .highlight {
+                color: green;
+            }
+            .title {
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="red-color yellow-color" style="color: darkgreen">
+            ORDERS PAGE
+        </h1>
+
+        <h2 class="title" id="special" style="color: orange">
+            Danh sach don hang
+        </h2>
+        <!--
+            Phan tu nay co:
+                tag: p
+                class: .highlight
+                id: #special
+                css inline: style="color:blue"
+
+            CSS ap dung:
+                base.css → p { color: orange }
+                base.css → .title { color: purple }
+                darkred.css → #special { color: darkred }
+                theme.css → #limongreen { color: limongreen }
+                internal CSS → #special { color: red }
+                internal CSS → .highlight { color: green }
+                css inline: style="color:blue"
+
+            Quy tac xet do uu tien:
+                Selector thang: inline style
+                Ly do: inline style co do uu tien cao nhat trong CSS
+
+            Mau hien thi cuoi cung: blue
+        -->
+        <p class="highlight pink" id="limongreen" style="color: blue">
+            Don hang 001
+        </p>
+        <!--
+            Phan tu nay co:
+                tag: p
+                class: .highlight
+                id: #special
+                css inline: style="color:purple"
+
+            CSS ap dung:
+                base.css → p { color: orange }
+                base.css → .title { color: purple }
+                base.css → #darkorange { color: darkorange }
+                theme.css → #special { color: deeppink }
+                internal CSS → #special { color: red }
+                internal CSS → .highlight { color: green }
+                css inline: style="color:purple"
+
+            Quy tac xet do uu tien:
+                Selector thang: inline style
+                Ly do: inline style co do uu tien cao nhat trong CSS
+
+            Mau hien thi cuoi cung: purple
+        -->
+        <p class="highlight" id="darkorange" style="color: purple">
+            Don hang 002
+        </p>
+
+        <p class="highlight">Don hang 003</p>
+        <p class="highlight">Don hang 004</p>
+    </body>
+</html>
