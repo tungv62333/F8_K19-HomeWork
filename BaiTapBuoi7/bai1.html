@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trung tâm cấu hình giao diện</title>
+
+        <style>
+            /* panel */
+            .panel {
+                width: 600px;
+                margin: 10px auto;
+                padding: 10px;
+                background: #f9fafb;
+                color: #111827;
+            }
+
+            /* header */
+            .header {
+                background: #f98000;
+                color: #f9fafb;
+                margin: 0;
+                padding: 4px;
+            }
+
+            /* label */
+            .option-label {
+                background: #eef2ff;
+                color: #4b5563;
+                padding: 4px 8px;
+                margin-right: 4px;
+            }
+
+            /* result */
+            .result {
+                background: #f3f4f6;
+                padding: 10px;
+                margin-top: 10px;
+            }
+
+            .result-item {
+                background: #ffffff;
+                color: #9ca3af;
+                padding: 8px;
+                margin-bottom: 4px;
+            }
+
+            /* theme */
+            #light:checked + label {
+                background: #fff8cc;
+                color: #8b5e00;
+            }
+
+            #light:checked ~ .result .light {
+                background: #fff8cc;
+                color: #111827;
+            }
+
+            #dark:checked + label {
+                background: #111827;
+                color: #f9fafb;
+            }
+
+            #dark:checked ~ .result .dark {
+                background: #111827;
+                color: #f9fafb;
+            }
+
+            /* color */
+            #red:checked + label {
+                background: #fee2e2;
+                color: #991b1b;
+            }
+
+            #red:checked ~ .result .red {
+                background: #fee2e2;
+                color: #7f1d1d;
+            }
+
+            #blue:checked + label {
+                background: #dbeafe;
+                color: #1d4ed8;
+            }
+
+            #blue:checked ~ .result .blue {
+                background: #dbeafe;
+                color: #1d4ed8;
+            }
+
+            #green:checked + label {
+                background: #dcfce7;
+                color: #166534;
+            }
+
+            #green:checked ~ .result .green {
+                background: #dcfce7;
+                color: #166534;
+            }
+
+            /* language */
+            #vi:checked + label {
+                background: #bbf7d0;
+                color: #166534;
+            }
+
+            #vi:checked ~ .result .vi {
+                color: #166534;
+            }
+
+            #en:checked + label {
+                background: #bfdbfe;
+                color: #1d4ed8;
+            }
+
+            #en:checked ~ .result .en {
+                color: #1d4ed8;
+            }
+
+            /* options */
+            #advanced:checked + label {
+                background: #fef3c7;
+                color: #92400e;
+            }
+
+            #advanced:checked ~ .result .advanced {
+                background: #fef3c7;
+                color: #92400e;
+            }
+
+            #eco:checked + label {
+                background: #bbf7d0;
+                color: #15803d;
+            }
+
+            #eco:checked ~ .result .eco {
+                background: #bbf7d0;
+                color: #166534;
+            }
+
+            #warning:checked + label {
+                background: #fee2e2;
+                color: #b91c1c;
+            }
+
+            #warning:checked ~ .result .warning {
+                background: #fee2e2;
+                color: #b91c1c;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="panel">
+            <!-- header -->
+            <h2 class="header">Trung tâm cấu hình giao diện (Demo)</h2>
+
+            <!-- theme -->
+            <p>Chọn giao diện (Theme):</p>
+            <input type="radio" name="theme" id="light" checked />
+            <label for="light" class="option-label">Light</label>
+
+            <input type="radio" name="theme" id="dark" />
+            <label for="dark" class="option-label">Dark</label>
+
+            <!-- color -->
+            <p>Chọn màu chủ đạo (Color):</p>
+            <input type="radio" name="color" id="red" checked />
+            <label for="red" class="option-label">Red</label>
+
+            <input type="radio" name="color" id="blue" />
+            <label for="blue" class="option-label">Blue</label>
+
+            <input type="radio" name="color" id="green" />
+            <label for="green" class="option-label">Green</label>
+
+            <!-- language -->
+            <p>Chọn ngôn ngữ (Language):</p>
+            <input type="radio" name="lang" id="vi" checked />
+            <label for="vi" class="option-label">VI</label>
+
+            <input type="radio" name="lang" id="en" />
+            <label for="en" class="option-label">EN</label>
+
+            <!-- options -->
+            <p>Tùy chọn bổ sung (Options - Checkbox):</p>
+            <input type="checkbox" id="advanced" />
+            <label for="advanced" class="option-label"
+                >Hiển thị mô tả nâng cao</label
+            >
+
+            <input type="checkbox" id="eco" />
+            <label for="eco" class="option-label">Bật chế độ Eco</label>
+
+            <input type="checkbox" id="warning" />
+            <label for="warning" class="option-label"
+                >Hiển thị cảnh báo quan trọng</label
+            >
+
+            <!-- result -->
+            <div class="result">
+                <p class="light result-item">
+                    Theme Light: Giao diện sáng, chữ đen.
+                </p>
+                <p class="dark result-item">
+                    Theme Dark: Giao diện tối, chữ sáng.
+                </p>
+
+                <p class="red result-item">
+                    Màu Red: được nhấn mạnh khi chọn Red.
+                </p>
+                <p class="blue result-item">
+                    Màu Blue: được nhấn mạnh khi chọn Blue.
+                </p>
+                <p class="green result-item">
+                    Màu Green: được nhấn mạnh khi chọn Green.
+                </p>
+
+                <p class="vi result-item">
+                    [VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.
+                </p>
+                <p class="en result-item">
+                    [EN] Hello, world! Khi chọn EN, dòng này rõ hơn.
+                </p>
+
+                <p class="advanced result-item">
+                    Mô tả nâng cao: giải thích kỹ hơn về các lựa chọn.
+                </p>
+
+                <p class="eco result-item">
+                    Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên.
+                </p>
+
+                <p class="warning result-item">
+                    Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ
+                    thống.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
