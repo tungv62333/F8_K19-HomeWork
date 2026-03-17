@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PERSONAL PROFILE CUSTOMIZER</title>
+        <style>
+            /* RESET CSS */
+            * {
+                margin: 0;
+                padding: 0;
+                font-size: 1rem;
+                font-weight: normal;
+                box-sizing: border-box;
+            }
+
+            /* PROFILE-CUSTOMIZE CSS */
+            .profile-customize {
+                width: 80vw;
+                height: 800px;
+                margin: 20px auto;
+                background-color: #eee;
+                border-spacing: 16px;
+            }
+
+            /* PANEL CSS */
+            .panel {
+                width: 40%;
+                padding: 16px;
+                background-color: #f5f5f5;
+            }
+
+            .panel-title {
+                margin-bottom: 16px;
+            }
+
+            .panel-box {
+                height: calc(100% - 1rem);
+            }
+
+            .panel-item {
+                margin-bottom: 8px;
+            }
+
+            .panel-item-title {
+                margin-bottom: 4px;
+            }
+
+            .option-label {
+                background-color: #ddd;
+                padding: 0.375em 0.625em;
+                margin: 0 5px 8px 0;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            /* PREVIEW CSS */
+            .preview {
+                width: 60%;
+            }
+
+            .preview-title {
+                margin-bottom: 8px;
+            }
+
+            .preview-box {
+                background-color: #fff;
+                height: calc(100% - 1.6rem);
+                padding: 16px;
+            }
+
+            .preview-item {
+                margin-bottom: 16px;
+            }
+
+            .profile-name {
+                font-weight: bold;
+                line-height: 1.2;
+            }
+
+            .profile-job {
+                line-height: 1.5;
+            }
+
+            .profile-skills,
+            .hobbies {
+                margin-bottom: 4px;
+            }
+
+            .skill-item {
+                padding: 0.5em 1em;
+                margin-right: 4px;
+                display: inline-block;
+                background-color: #f0f0f0;
+                font-size: 0.875rem;
+                cursor: pointer;
+            }
+
+            .hobby-item {
+                margin-right: 4px;
+                display: inline-block;
+            }
+
+            .contact-button {
+                padding: 0.5em 1em;
+                font-size: 0.875rem;
+                cursor: pointer;
+            }
+
+            /* =================================================== */
+
+            /* PANEL HANDLER CSS */
+
+            /* --OPTION LABEL HANDLER */
+
+            /* ---background-theme */
+            #background-theme-light:checked
+                ~ .profile-customize
+                .option-label[for="background-theme-light"],
+            #background-theme-gray:checked
+                ~ .profile-customize
+                .option-label[for="background-theme-gray"],
+            #background-theme-yellow:checked
+                ~ .profile-customize
+                .option-label[for="background-theme-yellow"],
+            #background-theme-blue:checked
+                ~ .profile-customize
+                .option-label[for="background-theme-blue"],
+            #background-theme-pink:checked
+                ~ .profile-customize
+                .option-label[for="background-theme-pink"] {
+                font-weight: bold;
+            }
+
+            /* ---name-size */
+            #name-size-small:checked
+                ~ .profile-customize
+                .option-label[for="name-size-small"],
+            #name-size-medium:checked
+                ~ .profile-customize
+                .option-label[for="name-size-medium"],
+            #name-size-large:checked
+                ~ .profile-customize
+                .option-label[for="name-size-large"] {
+                font-weight: bold;
+            }
+
+            /* ---name-text-style */
+            #name-text-style-normal:checked
+                ~ .profile-customize
+                .option-label[for="name-text-style-normal"],
+            #name-text-style-uppercase:checked
+                ~ .profile-customize
+                .option-label[for="name-text-style-uppercase"] {
+                font-weight: bold;
+            }
+
+            /* ---name-color */
+            #name-color-dark:checked
+                ~ .profile-customize
+                .option-label[for="name-color-dark"],
+            #name-color-blue:checked
+                ~ .profile-customize
+                .option-label[for="name-color-blue"],
+            #name-color-green:checked
+                ~ .profile-customize
+                .option-label[for="name-color-green"],
+            #name-color-red:checked
+                ~ .profile-customize
+                .option-label[for="name-color-red"] {
+                font-weight: bold;
+            }
+
+            /* ---text-alignment */
+            #text-alignment-left:checked
+                ~ .profile-customize
+                .option-label[for="text-alignment-left"],
+            #text-alignment-center:checked
+                ~ .profile-customize
+                .option-label[for="text-alignment-center"],
+            #text-alignment-right:checked
+                ~ .profile-customize
+                .option-label[for="text-alignment-right"] {
+                font-weight: bold;
+            }
+
+            /* ---job-title-size */
+            #job-title-size-small:checked
+                ~ .profile-customize
+                .option-label[for="job-title-size-small"],
+            #job-title-size-medium:checked
+                ~ .profile-customize
+                .option-label[for="job-title-size-medium"],
+            #job-title-size-large:checked
+                ~ .profile-customize
+                .option-label[for="job-title-size-large"] {
+                font-weight: bold;
+            }
+
+            /* ---job-letter-spacing */
+            #job-letter-spacing-tight:checked
+                ~ .profile-customize
+                .option-label[for="job-letter-spacing-tight"],
+            #job-letter-spacing-normal:checked
+                ~ .profile-customize
+                .option-label[for="job-letter-spacing-normal"],
+            #job-letter-spacing-wide:checked
+                ~ .profile-customize
+                .option-label[for="job-letter-spacing-wide"] {
+                font-weight: bold;
+            }
+
+            /* ---description-size */
+            #description-size-small:checked
+                ~ .profile-customize
+                .option-label[for="description-size-small"],
+            #description-size-medium:checked
+                ~ .profile-customize
+                .option-label[for="description-size-medium"],
+            #description-size-large:checked
+                ~ .profile-customize
+                .option-label[for="description-size-large"] {
+                font-weight: bold;
+            }
+
+            /* ---description-line-height */
+            #description-line-height-tight:checked
+                ~ .profile-customize
+                .option-label[for="description-line-height-tight"],
+            #description-line-height-normal:checked
+                ~ .profile-customize
+                .option-label[for="description-line-height-normal"],
+            #description-line-height-loose:checked
+                ~ .profile-customize
+                .option-label[for="description-line-height-loose"] {
+                font-weight: bold;
+            }
+
+            /* ---contact-button-color */
+            #contact-button-color-dark:checked
+                ~ .profile-customize
+                .option-label[for="contact-button-color-dark"],
+            #contact-button-color-blue:checked
+                ~ .profile-customize
+                .option-label[for="contact-button-color-blue"],
+            #contact-button-color-light:checked
+                ~ .profile-customize
+                .option-label[for="contact-button-color-light"] {
+                font-weight: bold;
+            }
+
+            /* --PREVIEW HANDLER */
+            /* ---background-theme */
+            #background-theme-light:checked ~ .profile-customize .preview-box {
+                background-color: white;
+            }
+            #background-theme-gray:checked ~ .profile-customize .preview-box {
+                background-color: lightgray;
+            }
+            #background-theme-yellow:checked ~ .profile-customize .preview-box {
+                background-color: lightyellow;
+            }
+            #background-theme-blue:checked ~ .profile-customize .preview-box {
+                background-color: lightblue;
+            }
+            #background-theme-pink:checked ~ .profile-customize .preview-box {
+                background-color: pink;
+            }
+
+            /* ---name-size */
+            #name-size-small:checked ~ .profile-customize .profile-name {
+                font-size: 2rem;
+            }
+            #name-size-medium:checked ~ .profile-customize .profile-name {
+                font-size: 2.25rem;
+            }
+            #name-size-large:checked ~ .profile-customize .profile-name {
+                font-size: 2.75rem;
+            }
+
+            /* ---name-text-style */
+            #name-text-style-normal:checked ~ .profile-customize .profile-name {
+                text-transform: none;
+            }
+            #name-text-style-uppercase:checked
+                ~ .profile-customize
+                .profile-name {
+                text-transform: uppercase;
+            }
+
+            /* ---name-color */
+            #name-color-dark:checked ~ .profile-customize .profile-name {
+                color: black;
+            }
+            #name-color-blue:checked ~ .profile-customize .profile-name {
+                color: blue;
+            }
+            #name-color-green:checked ~ .profile-customize .profile-name {
+                color: green;
+            }
+            #name-color-red:checked ~ .profile-customize .profile-name {
+                color: red;
+            }
+
+            /* ---text-alignment */
+            #text-alignment-left:checked ~ .profile-customize .preview-box {
+                text-align: left;
+            }
+            #text-alignment-center:checked ~ .profile-customize .preview-box {
+                text-align: center;
+            }
+            #text-alignment-right:checked ~ .profile-customize .preview-box {
+                text-align: right;
+            }
+            #text-alignment-right:checked ~ .profile-customize .skill-item {
+                margin-right: 0;
+                margin-left: 4px;
+            }
+            #text-alignment-right:checked ~ .profile-customize .hobby-item {
+                margin-right: 0;
+                margin-left: 4px;
+            }
+
+            /* ---job-title-size */
+            #job-title-size-small:checked ~ .profile-customize .profile-job {
+                font-size: 0.9rem;
+            }
+            #job-title-size-medium:checked ~ .profile-customize .profile-job {
+                font-size: 1rem;
+            }
+            #job-title-size-large:checked ~ .profile-customize .profile-job {
+                font-size: 1.3rem;
+            }
+
+            /* ---job-letter-spacing */
+            #job-letter-spacing-tight:checked
+                ~ .profile-customize
+                .profile-job {
+                letter-spacing: 0.03em;
+            }
+            #job-letter-spacing-normal:checked
+                ~ .profile-customize
+                .profile-job {
+                letter-spacing: 0.02em;
+            }
+            #job-letter-spacing-wide:checked ~ .profile-customize .profile-job {
+                letter-spacing: 0.18em;
+            }
+
+            /* ---description-size */
+            #description-size-small:checked
+                ~ .profile-customize
+                .profile-description {
+                font-size: 0.9rem;
+            }
+            #description-size-medium:checked
+                ~ .profile-customize
+                .profile-description {
+                font-size: 1rem;
+            }
+            #description-size-large:checked
+                ~ .profile-customize
+                .profile-description {
+                font-size: 1.125rem;
+            }
+
+            /* ---description-line-height */
+            #description-line-height-tight:checked
+                ~ .profile-customize
+                .profile-description {
+                line-height: 1.6;
+            }
+            #description-line-height-normal:checked
+                ~ .profile-customize
+                .profile-description {
+                line-height: 1.8;
+            }
+            #description-line-height-loose:checked
+                ~ .profile-customize
+                .profile-description {
+                line-height: 2;
+            }
+
+            /* ---contact-button-color */
+            #contact-button-color-dark:checked
+                ~ .profile-customize
+                .contact-button {
+                background-color: #1a1a1a;
+                color: white;
+            }
+            #contact-button-color-blue:checked
+                ~ .profile-customize
+                .contact-button {
+                background-color: blue;
+                color: white;
+            }
+            #contact-button-color-light:checked
+                ~ .profile-customize
+                .contact-button {
+                background-color: #f5f5f5;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- INPUT HIDDEN PANEL -->
+
+        <!-- --Background Theme Panel -->
+
+        <input
+            type="radio"
+            name="background-theme"
+            id="background-theme-light"
+            hidden
+        />
+        <input
+            type="radio"
+            name="background-theme"
+            id="background-theme-gray"
+            hidden
+        />
+        <input
+            type="radio"
+            name="background-theme"
+            id="background-theme-yellow"
+            hidden
+            checked
+        />
+        <input
+            type="radio"
+            name="background-theme"
+            id="background-theme-blue"
+            hidden
+        />
+        <input
+            type="radio"
+            name="background-theme"
+            id="background-theme-pink"
+            hidden
+        />
+
+        <!-- --Name Size Panel -->
+        <input type="radio" name="name-size" id="name-size-small" hidden />
+        <input type="radio" name="name-size" id="name-size-medium" hidden />
+        <input
+            type="radio"
+            name="name-size"
+            id="name-size-large"
+            hidden
+            checked
+        />
+
+        <!-- --Name Text Style Panel -->
+        <input
+            type="radio"
+            name="name-text-style"
+            id="name-text-style-normal"
+            hidden
+        />
+        <input
+            type="radio"
+            name="name-text-style"
+            id="name-text-style-uppercase"
+            hidden
+            checked
+        />
+
+        <!-- --Name Color Panel -->
+        <input type="radio" name="name-color" id="name-color-dark" hidden />
+        <input type="radio" name="name-color" id="name-color-blue" hidden />
+        <input type="radio" name="name-color" id="name-color-green" hidden />
+        <input
+            type="radio"
+            name="name-color"
+            id="name-color-red"
+            hidden
+            checked
+        />
+
+        <!-- --Text Alignment Panel -->
+        <input
+            type="radio"
+            name="text-alignment"
+            id="text-alignment-left"
+            hidden
+        />
+        <input
+            type="radio"
+            name="text-alignment"
+            id="text-alignment-center"
+            hidden
+            checked
+        />
+        <input
+            type="radio"
+            name="text-alignment"
+            id="text-alignment-right"
+            hidden
+        />
+
+        <!-- --Job Title Size Panel -->
+        <input
+            type="radio"
+            name="job-title-size"
+            id="job-title-size-small"
+            hidden
+        />
+        <input
+            type="radio"
+            name="job-title-size"
+            id="job-title-size-medium"
+            hidden
+        />
+        <input
+            type="radio"
+            name="job-title-size"
+            id="job-title-size-large"
+            hidden
+            checked
+        />
+        <!-- --Job Letter Spacing Panel -->
+        <input
+            type="radio"
+            name="job-letter-spacing"
+            id="job-letter-spacing-tight"
+            hidden
+        />
+        <input
+            type="radio"
+            name="job-letter-spacing"
+            id="job-letter-spacing-normal"
+            hidden
+        />
+        <input
+            type="radio"
+            name="job-letter-spacing"
+            id="job-letter-spacing-wide"
+            hidden
+            checked
+        />
+
+        <!-- --Description Size Panel -->
+        <input
+            type="radio"
+            name="description-size"
+            id="description-size-small"
+            hidden
+        />
+        <input
+            type="radio"
+            name="description-size"
+            id="description-size-medium"
+            hidden
+        />
+        <input
+            type="radio"
+            name="description-size"
+            id="description-size-large"
+            hidden
+            checked
+        />
+
+        <!-- --Description Line Height Panel -->
+        <input
+            type="radio"
+            name="description-line-height"
+            id="description-line-height-tight"
+            hidden
+        />
+        <input
+            type="radio"
+            name="description-line-height"
+            id="description-line-height-normal"
+            hidden
+        />
+        <input
+            type="radio"
+            name="description-line-height"
+            id="description-line-height-loose"
+            hidden
+            checked
+        />
+
+        <!-- --Contact Button Color Panel -->
+        <input
+            type="radio"
+            name="contact-button-color"
+            id="contact-button-color-dark"
+            hidden
+        />
+        <input
+            type="radio"
+            name="contact-button-color"
+            id="contact-button-color-blue"
+            hidden
+            checked
+        />
+        <input
+            type="radio"
+            name="contact-button-color"
+            id="contact-button-color-light"
+            hidden
+        />
+
+        <!-- PANEL -->
+        <table class="profile-customize">
+            <tbody>
+                <tr>
+                    <td class="panel">
+                        <!-- panel title -->
+                        <h2 class="panel-title">Tùy chỉnh hồ sơ</h2>
+
+                        <!-- panel box -->
+                        <div class="panel-box">
+                            <!-- Background Color -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    1. Màu nền hồ sơ
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="background-theme-light"
+                                        class="option-label"
+                                        >Light</label
+                                    >
+                                    <label
+                                        for="background-theme-gray"
+                                        class="option-label"
+                                        >Gray</label
+                                    >
+                                    <label
+                                        for="background-theme-yellow"
+                                        class="option-label"
+                                        >Yellow</label
+                                    >
+                                    <label
+                                        for="background-theme-blue"
+                                        class="option-label"
+                                        >Blue
+                                    </label>
+                                    <label
+                                        for="background-theme-pink"
+                                        class="option-label"
+                                        >Pink</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Name Size -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    2. Kích thước tên
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="name-size-small"
+                                        class="option-label"
+                                        >Small</label
+                                    >
+                                    <label
+                                        for="name-size-medium"
+                                        class="option-label"
+                                        >Medium</label
+                                    >
+                                    <label
+                                        for="name-size-large"
+                                        class="option-label"
+                                        >Large</label
+                                    >
+                                </div>
+                            </div>
+                            <!-- Name Text Style -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    3. Kiểu chữ tên
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="name-text-style-normal"
+                                        class="option-label"
+                                        >Normal</label
+                                    >
+                                    <label
+                                        for="name-text-style-uppercase"
+                                        class="option-label"
+                                        >Uppercase</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Name Color -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">4. Màu chữ tên</h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="name-color-dark"
+                                        class="option-label"
+                                        >Dark</label
+                                    >
+                                    <label
+                                        for="name-color-blue"
+                                        class="option-label"
+                                        >Blue</label
+                                    >
+                                    <label
+                                        for="name-color-green"
+                                        class="option-label"
+                                        >Green</label
+                                    >
+                                    <label
+                                        for="name-color-red"
+                                        class="option-label"
+                                        >Red</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Text Alignment -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    5. Căn lề hồ sơ
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="text-alignment-left"
+                                        class="option-label"
+                                        >Left</label
+                                    >
+                                    <label
+                                        for="text-alignment-center"
+                                        class="option-label"
+                                        >Center</label
+                                    >
+                                    <label
+                                        for="text-alignment-right"
+                                        class="option-label"
+                                        >Right</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Job Title Size -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    6. Kích thước nghề nghiệp
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="job-title-size-small"
+                                        class="option-label"
+                                        >Small</label
+                                    >
+                                    <label
+                                        for="job-title-size-medium"
+                                        class="option-label"
+                                        >Medium</label
+                                    >
+                                    <label
+                                        for="job-title-size-large"
+                                        class="option-label"
+                                        >Large</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Job Letter Spacing -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    7. Khoảng cách chữ nghề nghiệp
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="job-letter-spacing-tight"
+                                        class="option-label"
+                                        >Tight</label
+                                    >
+                                    <label
+                                        for="job-letter-spacing-normal"
+                                        class="option-label"
+                                        >Normal</label
+                                    >
+                                    <label
+                                        for="job-letter-spacing-wide"
+                                        class="option-label"
+                                        >Wide</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Description Size -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    8. Kích thước mô tả
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="description-size-small"
+                                        class="option-label"
+                                        >Small</label
+                                    >
+                                    <label
+                                        for="description-size-medium"
+                                        class="option-label"
+                                        >Normal</label
+                                    >
+                                    <label
+                                        for="description-size-large"
+                                        class="option-label"
+                                        >Large</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Description Letter Spacing -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    9. Giãn dòng mô tả
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="description-line-height-tight"
+                                        class="option-label"
+                                        >Tight</label
+                                    >
+                                    <label
+                                        for="description-line-height-normal"
+                                        class="option-label"
+                                        >Normal</label
+                                    >
+                                    <label
+                                        for="description-line-height-loose"
+                                        class="option-label"
+                                        >Loose</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Contact Button Color -->
+                            <div class="panel-item">
+                                <h3 class="panel-item-title">
+                                    10. Màu nút liên hệ
+                                </h3>
+                                <div class="panel-item-options">
+                                    <label
+                                        for="contact-button-color-dark"
+                                        class="option-label"
+                                        >Dark</label
+                                    >
+                                    <label
+                                        for="contact-button-color-blue"
+                                        class="option-label"
+                                        >Blue</label
+                                    >
+                                    <label
+                                        for="contact-button-color-light"
+                                        class="option-label"
+                                        >Light</label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <!-- PREVIEW -->
+                    <td class="preview">
+                        <!-- preview title -->
+                        <h2 class="preview-title">Preview hồ sơ cá nhân</h2>
+
+                        <!-- preview box -->
+                        <div class="preview-box">
+                            <!-- profile name -->
+                            <div class="preview-item">
+                                <p class="profile-name">Nguyễn Minh Khoa</p>
+                            </div>
+
+                            <!-- profile job title -->
+                            <div class="preview-item">
+                                <p class="profile-job">
+                                    Frontend Developer &middot; Ho Chi Minh City
+                                </p>
+                            </div>
+
+                            <!-- profile description -->
+                            <div class="preview-item">
+                                <p class="profile-description">
+                                    Tôi là một lập trình viên Frontend với hơn 3
+                                    năm kinh nghiệm xây dựng giao diện web hiện
+                                    đại, tập trung vào hiệu suất và trải nghiệm
+                                    người dùng. Tôi yêu thích việc biến ý tưởng
+                                    sáng tạo thành sản phẩm thực tế.
+                                </p>
+                            </div>
+
+                            <!-- profile skills -->
+                            <div class="preview-item">
+                                <p class="profile-skills">Kỹ năng</p>
+                                <ul class="skills-list">
+                                    <li class="skill-item">HTML5</li>
+                                    <li class="skill-item">CSS3</li>
+                                    <li class="skill-item">JavaScript</li>
+                                    <li class="skill-item">React</li>
+                                    <li class="skill-item">Figma</li>
+                                    <li class="skill-item">Git</li>
+                                </ul>
+                            </div>
+
+                            <!-- profile hobbies -->
+                            <div class="preview-item">
+                                <p class="hobbies">Sở thích</p>
+                                <ul class="hobbies-list">
+                                    <li class="hobby-item">Nhiếp ảnh</li>
+                                    <li class="hobby-item">Đọc sách</li>
+                                    <li class="hobby-item">Du lịch</li>
+                                    <li class="hobby-item">Cà phê</li>
+                                </ul>
+                            </div>
+
+                            <!-- contact button -->
+                            <div class="preview-item">
+                                <button class="contact-button">
+                                    Liên hệ với tôi
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
