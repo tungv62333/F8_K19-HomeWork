@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Toast thông báo</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            /* wrapper css */
+            .wrapper {
+                width: 80vw;
+                padding-top: 30px;
+                margin-left: auto;
+                line-height: 1;
+                margin-right: auto;
+            }
+
+            /* btn css */
+            .open-btn {
+                border: none;
+            }
+
+            .open-btn .toast-toggle {
+                display: inline-block;
+            }
+
+            .open-btn label {
+                padding: 12px 24px;
+                background-color: rgb(31, 29, 29);
+                color: white;
+                cursor: pointer;
+            }
+
+            .sub-open-btn {
+                display: none;
+            }
+
+            /* toast css */
+            .toast {
+                display: none;
+                margin-top: 30px;
+                width: 200px;
+                background-color: rgb(102, 194, 103);
+                padding: 12px 16px;
+                color: white;
+            }
+
+            .toast .toast-icon {
+                font-size: 20px;
+            }
+
+            .toast .toast-text {
+                margin-left: 4px;
+            }
+
+            .toast .close-btn {
+                margin-left: 8px;
+                font-size: 20px;
+            }
+
+            .toast .close-btn label {
+                font-size: 20px;
+                padding: 4px;
+                cursor: pointer;
+            }
+
+            /* toast toggle handler */
+            /* nếu toggle checked - hiện toast thì nút chính ẩn, nút phụ hiện lên để khi click lại vào nút không bị ẩn toast */
+            #toast-toggle:checked ~ .open-btn .sub-open-btn {
+                display: inline;
+            }
+
+            #toast-toggle:checked ~ .toast {
+                display: block;
+            }
+
+            #toast-toggle:checked ~ .open-btn label[for="toast-toggle"] {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- input panel -->
+            <input
+                type="checkbox"
+                name="toast-toggle"
+                id="toast-toggle"
+                hidden
+            />
+
+            <!-- btn -->
+            <button class="open-btn">
+                <label for="toast-toggle">Hiện thông báo</label>
+                <!-- tạo thêm 1 label để sau khi hiện toast ấn nút hiện thông báo sẽ không bị ẩn toast -> chỉ có nút tắt mới ẩn được toast -->
+                <label class="sub-open-btn">Hiện thông báo</label>
+            </button>
+
+            <!-- toast -->
+            <div class="toast">
+                <span class="toast-icon">🎉</span>
+                <span class="toast-text">Lưu thành công</span>
+                <span class="close-btn">
+                    <label for="toast-toggle">&times;</label>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>

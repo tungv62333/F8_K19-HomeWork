@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modal</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .wrapper {
+                width: 40vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* btn css */
+            button {
+                border: none;
+                margin: 60px 0 60px 60px;
+            }
+
+            .open-btn label,
+            .sub-open-btn label {
+                display: block;
+                padding: 12px 24px;
+                font-size: 1rem;
+                background-color: #3b82f6;
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+            .sub-open-btn {
+                display: none;
+            }
+
+            /* overlay css */
+            .overlay {
+                width: 600px;
+                height: 400px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-top: 1px solid transparent;
+                display: none;
+            }
+
+            /* modal css */
+            .modal {
+                width: 300px;
+                height: 200px;
+                background-color: #ffffff;
+                padding: 50px;
+                margin-top: 99px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+
+            .modal .content {
+                margin-bottom: 40px;
+                font-size: 1rem;
+            }
+
+            .modal .close-btn {
+                display: block;
+                background-color: #ef4444;
+                color: #ffffff;
+                text-align: center;
+                width: 80px;
+                padding: 12px 24px;
+                cursor: pointer;
+            }
+
+            /* modal toggle handler */
+
+            /* hide .open-btn */
+            /* ẩn nút open chính và hiện nút open phụ để khi click lại vào nút không bị ẩn modal */
+            #modal-toggle:checked ~ .open-btn {
+                display: none;
+            }
+
+            /* show .sub-open-btn */
+            #modal-toggle:checked ~ .sub-open-btn {
+                display: block;
+            }
+
+            #modal-toggle:checked ~ .overlay {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- input panel -->
+            <input
+                type="checkbox"
+                name="modal-toggle"
+                id="modal-toggle"
+                hidden
+            />
+            <button class="open-btn">
+                <label for="modal-toggle">Mở modal</label>
+            </button>
+            <button class="sub-open-btn">
+                <label>Mở modal</label>
+            </button>
+            <label for="modal-toggle" class="overlay">
+                <!-- bọc trong label không có for để khi click vào trong khung modal không bị tắt cả modal -->
+                <label class="modal">
+                    <p class="content">Đây là nội dung thông báo</p>
+                    <label for="modal-toggle" class="close-btn">Đóng</label>
+                </label>
+            </label>
+        </div>
+    </body>
+</html>
