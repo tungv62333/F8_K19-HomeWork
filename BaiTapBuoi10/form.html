@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đăng ký tư vấn</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap&subset=vietnamese"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/form.css" />
+    </head>
+    <body>
+        <!-- input check -->
+        <input type="checkbox" name="modal-panel" id="modal-panel" hidden />
+        <!-- wrapper -->
+        <div class="wrapper">
+            <!-- register btn -->
+            <label for="modal-panel" class="register-btn">Tư vấn ngay</label>
+            <!-- modal -->
+            <div class="modal">
+                <!-- overlay -->
+                <label for="modal-panel" class="overlay"></label>
+                <!-- form -->
+                <form
+                    action="https://api-gateway.fullstack.edu.vn/action_page.php"
+                    class="form"
+                >
+                    <!-- header -->
+                    <div class="header">
+                        <h2 class="form-title">Đăng ký tư vấn</h2>
+                        <p class="form-description">
+                            Điền thông tin để được tư vấn lộ trình học phù hợp
+                        </p>
+                        <label for="modal-panel" class="close-btn"
+                            >&times;</label
+                        >
+                    </div>
+                    <!-- fullname -->
+                    <div class="form-item">
+                        <label
+                            for="fullname"
+                            class="form-item-label requirement"
+                            >Họ và tên</label
+                        >
+                        <input
+                            class="form-item-input"
+                            type="text"
+                            name="fullname"
+                            id="fullname"
+                            placeholder="Nguyễn Văn A"
+                            required
+                        />
+                        <div class="tooltip">Nhập họ và tên đầy đủ của bạn</div>
+                    </div>
+                    <!-- phone -->
+                    <div class="form-item">
+                        <label for="phone" class="form-item-label requirement"
+                            >Số điện thoại</label
+                        >
+                        <input
+                            class="form-item-input"
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            placeholder="0912345678"
+                            pattern="0[0-9]{9}"
+                            required
+                        />
+                        <div class="tooltip">
+                            Số điện thoại để chúng tôi liên hệ tư vấn
+                        </div>
+                    </div>
+                    <!-- email -->
+                    <div class="form-item">
+                        <label for="email" class="form-item-label">Email</label>
+                        <input
+                            class="form-item-input"
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="example@gmail.com"
+                        />
+                        <div class="tooltip">
+                            Email nhận thông tin khóa học (không bắt buộc)
+                        </div>
+                    </div>
+                    <!-- courses -->
+                    <div class="form-item">
+                        <label class="form-item-label requirement"
+                            >Khóa học quan tâm</label
+                        >
+                        <!-- html-css -->
+                        <div class="course-item">
+                            <input
+                                type="checkbox"
+                                name="courses[]"
+                                id="html-css"
+                                value="html-css"
+                            />
+                            <label class="course-item-label" for="html-css"
+                                >HTML & CSS</label
+                            >
+                            <div class="tooltip">
+                                Khóa nền tảng xây dựng giao diện web
+                            </div>
+                        </div>
+                        <!-- javascript -->
+                        <div class="course-item">
+                            <input
+                                type="checkbox"
+                                name="courses[]"
+                                id="javascript"
+                                value="javascript"
+                            />
+                            <label class="course-item-label" for="javascript"
+                                >JavaScript</label
+                            >
+                            <div class="tooltip">
+                                Ngôn ngữ lập trình cho web động
+                            </div>
+                        </div>
+                        <!-- frontend -->
+                        <div class="course-item">
+                            <input
+                                type="checkbox"
+                                name="courses[]"
+                                id="frontend"
+                                value="Front-end lộ trình"
+                            />
+                            <label class="course-item-label" for="frontend"
+                                >Front-end lộ trình</label
+                            >
+                            <div class="tooltip">
+                                Lộ trình hoàn chỉnh trở thành Front-end
+                                Developer
+                            </div>
+                        </div>
+                        <!-- reactjs -->
+                        <div class="course-item">
+                            <input
+                                type="checkbox"
+                                name="courses[]"
+                                id="reactjs"
+                                value="reactjs"
+                            />
+                            <label class="course-item-label" for="reactjs"
+                                >ReactJS</label
+                            >
+                            <div class="tooltip">
+                                Thư viện JavaScript phổ biến nhất hiện nay
+                            </div>
+                        </div>
+                        <!-- unknown -->
+                        <div class="course-item">
+                            <input
+                                type="checkbox"
+                                name="courses[]"
+                                id="unknown"
+                                value="unknown"
+                            />
+                            <label class="course-item-label" for="unknown"
+                                >Chưa rõ - cần tư vấn</label
+                            >
+                            <div class="tooltip">
+                                Chúng tôi sẽ tư vấn lộ trình phù hợp với bạn
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button type="submit" class="submit-btn">
+                            ĐĂNG KÝ TƯ VẤN NGAY
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
