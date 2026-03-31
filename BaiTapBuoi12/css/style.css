@@ -1,0 +1,122 @@
+/* container css */
+.container {
+    font-family: "Roboto", sans-serif;
+    color: #666666;
+    background-color: #ebf5fe;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100vw;
+    padding: 2rem 10rem;
+}
+
+/* service card css */
+.service-card {
+    background-color: #ffffff;
+    width: calc((100% - 4rem) / 3);
+    padding: 3rem;
+    border-radius: 0.8rem;
+    border: 2px solid #e0e0e0;
+}
+
+.service-card.ui-ux-design:hover {
+    border: 3px solid #ff6b6b;
+}
+
+.service-card.theme-development:hover {
+    border: 3px solid #4ecdc4;
+}
+
+.service-card.digital-marketing:hover {
+    border: 3px solid #f9a825;
+}
+
+.service-card.website-design:hover {
+    border: 3px solid #5e9cff ;
+}
+
+.service-card.responsive-design:hover {
+    border: 3px solid #9b59b6 ;
+}
+
+.service-card.quick-support:hover {
+    border: 3px solid #7cb342 ;
+}
+
+/* card header css */
+.service-card .card__header {
+    display: flex;
+}
+
+/* card header icon css */
+.service-card .card__header .card__header__icon {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 3.2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.service-card.ui-ux-design .card__header .card__header__icon {
+    background-color: #ff6b6b;
+}
+
+.service-card.theme-development .card__header .card__header__icon {
+    background-color: #4ecdc4;
+}
+
+.service-card.digital-marketing .card__header .card__header__icon {
+    background-color: #f9a825;
+}
+
+.service-card.website-design .card__header .card__header__icon {
+    background-color: #5e9cff ;
+}
+
+.service-card.responsive-design .card__header .card__header__icon {
+    background-color: #9b59b6 ;
+}
+
+.service-card.quick-support .card__header .card__header__icon {
+    background-color: #7cb342 ;
+}
+
+/* card header title css */
+.service-card .card__header .card__header__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* card content css */
+.service-card .card__content {
+    margin-bottom: 2rem;
+}
+
+.service-card .card__content .card__content__desc {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* card footer css */
+.service-card .card__footer .learn-more {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2196f3;
+    text-decoration: none;
+}
+
+.service-card .card__footer .learn-more:hover {
+    text-decoration: underline;
+}
