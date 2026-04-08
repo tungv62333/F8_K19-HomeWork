@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive Card Layout</title>
+        <script src="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/scripts/verify.min.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <input type="checkbox" name="menu-toggle" id="menu-toggle" hidden />
+        <!-- Header -->
+        <header class="site-header">
+            <a class="site-header__logo">My Website</a>
+            <label
+                for="menu-toggle"
+                class="site-header__nav-toggle mdi mdi-menu"
+            ></label>
+            <label for="menu-toggle" class="overlay"></label>
+            <nav class="site-header__nav">
+                <label
+                    for="menu-toggle"
+                    class="mdi mdi-close nav__close-btn"
+                ></label>
+                <a href="#" class="site-header__nav-link">Link 1</a>
+                <a href="#" class="site-header__nav-link">Link 2</a>
+                <a href="#" class="site-header__nav-link">Link 3</a>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <main class="container">
+            <!-- Article Showcase -->
+            <section class="article-showcase">
+                <h1 class="article-showcase__main-heading">
+                    This is the main heading
+                </h1>
+
+                <p class="article-showcase__intro-paragraph">
+                    Veggies es bonus vobis, proinde vos postulo essum magis
+                    kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon
+                    azuki bean garlic.
+                </p>
+
+                <p class="article-showcase__intro-paragraph">
+                    Gumbo beet greens corn soko endive gumbo gourd. Parsley
+                    shallot courgette tatsoi pea sprouts fava bean collard
+                    greens dandelion okra wakame tomato. Dandelion cucumber
+                    earthnut pea peanut soko zucchini.
+                </p>
+
+                <div class="article-showcase__card-list">
+                    <article class="info-card">
+                        <h2 class="info-card__heading">Card One</h2>
+                        <p class="info-card__description">
+                            Turnip greens yarrow ricebean rutabaga endive
+                            cauliflower sea lettuce kohlrabi amaranth water
+                            spinach avocado.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <h2 class="info-card__heading">Card Two</h2>
+                        <p class="info-card__description">
+                            Daikon napa cabbage asparagus winter purslane kale.
+                            Celery potato scallion desert raisin horseradish
+                            spinach carrot soko.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <h2 class="info-card__heading">Card Three</h2>
+                        <p class="info-card__description">
+                            Lotus root water spinach fennel kombu maize bamboo
+                            shoot green bean swiss chard seakale pumpkin onion
+                            chickpea gram corn pea.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <h2 class="info-card__heading">Card Four</h2>
+                        <p class="info-card__description">
+                            Lotus root water spinach fennel kombu maize bamboo
+                            shoot green bean swiss chard seakale pumpkin onion
+                            chickpea gram corn pea.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <h2 class="info-card__heading">Card Five</h2>
+                        <p class="info-card__description">
+                            Nori grape silver beet broccoli kombu beet greens
+                            fava bean potato quandong celery. Bunya nuts
+                            black-eyed pea prairie turnip leek lentil turnip
+                            greens parsnip.
+                        </p>
+                    </article>
+                </div>
+            </section>
+            <!-- Page Sidebar -->
+            <aside class="page-sidebar">
+                <p class="page-sidebar__message">
+                    Have you discovered all of the other excellent content on
+                    this website?
+                </p>
+            </aside>
+        </main>
+    </body>
+</html>
