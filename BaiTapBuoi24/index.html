@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fake Store</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <!-- Header Logo -->
+            <div class="header__logo">
+                <i class="header__logo--icon fa-solid fa-cart-shopping"></i>
+                <div class="header__logo--text">FakeStore</div>
+            </div>
+            <!-- Header Search -->
+            <div class="header__search">
+                <i
+                    class="header__search--icon fa-solid fa-magnifying-glass"
+                ></i>
+                <input
+                    class="header__search--input"
+                    type="text"
+                    placeholder="Tìm kiếm sản phẩm..."
+                />
+            </div>
+            <!-- Header Cart -->
+            <div class="header__cart">
+                <i class="header__cart--icon fa-solid fa-cart-shopping"></i>
+                <div class="header__cart-count"></div>
+            </div>
+        </header>
+        <!-- Main -->
+        <main class="main-layout">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Category -->
+                <div class="category-panel">
+                    <!-- Category Header -->
+                    <div class="category-panel__header">
+                        <i
+                            class="category-panel__header--icon fa-solid fa-filter"
+                        ></i>
+                        <span class="category-panel__header--text"
+                            >Danh mục</span
+                        >
+                    </div>
+                    <!-- Category List -->
+                    <ul class="category-list">
+                        <!-- ... -->
+                    </ul>
+                </div>
+            </div>
+            <!-- Product Section -->
+            <div class="product-section">
+                <div class="product-grid">
+                    <!-- ... -->
+                </div>
+            </div>
+        </main>
+
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -26,17 +26,18 @@ const orders = [
 
 // ==================================================================================
 
+import { toIdMap } from "./utils.js";
 // build map
-function toIdMap(items) {
-    const idMap = {};
+// function toIdMap(items) {
+//     const idMap = {};
 
-    for (const item of items) {
-        const { id, ...rest } = item;
-        idMap[id] = rest;
-    }
+//     for (const item of items) {
+//         const { id, ...rest } = item;
+//         idMap[id] = rest;
+//     }
 
-    return idMap;
-}
+//     return idMap;
+// }
 
 // employee map
 const employeeByIdMap = toIdMap(employees);
@@ -357,3 +358,11 @@ const sortedEmployees = sortEmployeesByRevenue(employeeStatsMap, employees);
 console.log(`10. Danh sách nhân viên theo doanh thu giảm dần:`);
 
 console.log(sortedEmployees);
+
+console.log(employeeByIdMap);
+console.log(productByIdMap);
+console.log("===========");
+// console.log(buildStatsMap(orders));
+console.dir(buildStatsMap(orders), {
+    depth: null,
+});
