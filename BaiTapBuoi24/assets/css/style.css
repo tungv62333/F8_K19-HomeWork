@@ -102,7 +102,7 @@ html {
 /* Sidebar */
 .sidebar {
     flex-shrink: 0;
-    width: 16%;
+    width: 28rem;
 }
 
 .category-panel {
@@ -148,9 +148,14 @@ html {
     color: #6d7887;
     border-radius: 1rem;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
-.category-item:first-child {
+.category-item:hover {
+    background: #edf2ff;
+}
+
+.category-item.active {
     color: #5648e4;
     background: #edf2ff;
 }
