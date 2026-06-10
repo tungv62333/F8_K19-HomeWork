@@ -1,2 +1,13 @@
-/.idea/
+# IntelliJ
+.idea/
+*.iml
+
+# Node
 **/node_modules/
+
+# Build
+dist/
+build/
+
+# Logs
+*.log

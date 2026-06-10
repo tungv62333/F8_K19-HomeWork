@@ -68,7 +68,7 @@ function findBestSellingProduct(products, orders) {
     for (let i = 0; i < products.length; i++) {
         const product = products[i];
 
-        const revenue = productRevenueMap[product.id];
+        const revenue = productRevenueMap[product.id] || 0;
 
         if (revenue > highestRevenue) {
             highestRevenue = revenue;
