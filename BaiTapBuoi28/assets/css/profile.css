@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+}
+
+.profile-page {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    color: white;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    background: white;
+}
+
+.profile-basic h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.username {
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+.role-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.profile-content {
+    padding: 30px;
+}
+
+.profile-section {
+    margin-bottom: 40px;
+}
+
+.profile-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #444;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    background: #f9fafc;
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.info-item span {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.info-item p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.logout-btn {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 14px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+
+    color: white;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+}
