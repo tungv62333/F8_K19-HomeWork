@@ -1,0 +1,21 @@
+.category-tabs {
+    display: flex;
+
+    margin-bottom: 15px;
+}
+
+.tab {
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    padding: 12px 30px;
+
+    font-weight: bold;
+}
+
+.tab.active {
+    color: #d70018;
+
+    border-bottom: 2px solid #d70018;
+}

@@ -1,0 +1,197 @@
+.product-card {
+    position: relative;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Badge ---------- */
+
+.card-badge {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.discount {
+    background: #d70018;
+
+    color: #fff;
+
+    padding: 7px 12px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    border-radius: 18px 0 14px 0;
+}
+
+.installment {
+    background: #edf3ff;
+
+    color: #4285f4;
+
+    padding: 7px 12px;
+
+    font-size: 13px;
+
+    border-radius: 0 18px 0 14px;
+}
+
+/* ---------- Image ---------- */
+
+.card-image {
+    height: 170px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding-top: 18px;
+}
+
+.card-image img {
+    width: 125px;
+
+    object-fit: contain;
+
+    transition: 0.2s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ---------- Body ---------- */
+
+.card-body {
+    padding: 0 12px 12px;
+}
+
+.product-name {
+    font-size: 15px;
+
+    line-height: 1.45;
+
+    color: #333;
+
+    font-weight: 700;
+
+    height: 44px;
+
+    overflow: hidden;
+
+    margin-bottom: 8px;
+}
+
+.pre-order {
+    display: inline-block;
+
+    background: #fff0ea;
+
+    color: #d46f42;
+
+    padding: 4px 10px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.price-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #d70018;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.old-price {
+    color: #999;
+
+    font-size: 13px;
+
+    text-decoration: line-through;
+}
+
+.smember {
+    background: #eaf1ff;
+
+    color: #4b6489;
+
+    border-radius: 4px;
+
+    padding: 4px 8px;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+}
+
+.installment-box {
+    background: #f3f3f3;
+
+    border-radius: 6px;
+
+    padding: 8px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+/* ---------- Footer ---------- */
+
+.card-footer {
+    padding: 12px;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.card-footer svg {
+    color: #2d6cf6;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+.brand-filter {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 16px 0;
+}
+
+.brand-item {
+    border: 1px solid #ddd;
+
+    background: #fff;
+
+    border-radius: 10px;
+
+    padding: 8px 18px;
+
+    font-size: 14px;
+}
+
+.brand-item.active {
+    background: #d70018;
+
+    color: #fff;
+
+    border-color: #d70018;
+}
